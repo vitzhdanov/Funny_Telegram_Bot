@@ -6,14 +6,14 @@ import psycopg2
 from aiogram.dispatcher import filters
 from datetime import datetime
 
-SAVE_WORD = ['бот', 'сохрани']
+SAVE_WORD = ['Бот', 'сохрани']
 
 
 @dp.message_handler(filters.Text(contains=SAVE_WORD))
 async def phrases(message: types.Message):
-    user_phrase = message.text.replace('бот', '').replace('сохрани', '')
+    user_phrase = message.text.replace('Бот', '').replace('сохрани', '')
     user_id = message.from_user.id
-    user_name = message.chat['first_name'] or message.chat['username']
+    user_name = message.from_user.first_name or message.from_user.username
     date_time = datetime.now().strftime('%d-%m-%Y')
 
     try:
