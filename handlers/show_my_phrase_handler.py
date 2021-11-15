@@ -5,7 +5,7 @@ from loader import dp
 import psycopg2
 from aiogram.dispatcher import filters
 
-SAVE_WORD = ['бот', 'покажи мои', 'фраз']
+SAVE_WORD = ['Бот', 'покажи мои', 'фраз']
 
 
 @dp.message_handler(filters.Text(contains=SAVE_WORD))

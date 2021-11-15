@@ -4,9 +4,10 @@ from aiogram import executor
 import aioschedule
 from random import choice
 from loader import dp
-import middlewares, filters, handlers
 from utils.notify_admins import on_startup_notify
 from utils.set_bot_commands import set_default_commands
+from handlers.count_fword_handler import record_fword, display_fword
+
 
 
 async def star_of_the_day():
@@ -15,6 +16,9 @@ async def star_of_the_day():
 
 async def scheduler():
     aioschedule.every().day.at("7:00").do(star_of_the_day)
+    aioschedule.every().hour.do(record_fword)
+    aioschedule.every().day.at("21:00").do(display_fword)
+
     while True:
         await aioschedule.run_pending()
         await asyncio.sleep(1)

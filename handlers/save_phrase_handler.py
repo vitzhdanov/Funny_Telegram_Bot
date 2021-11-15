@@ -15,7 +15,6 @@ async def phrases(message: types.Message):
     user_id = message.from_user.id
     user_name = message.from_user.first_name or message.from_user.username
     date_time = datetime.now().strftime('%d-%m-%Y')
-
     try:
         connection = psycopg2.connect(
             host=data['host'],
@@ -51,8 +50,8 @@ async def phrases(message: types.Message):
                 print('Save')
             else:
                 cursor.execute("""SELECT DISTINCT(date_time), user_name FROM user_phrases WHERE user_phrase=%s""", (user_phrase,))
-                data_user = str(cursor.fetchall()[0]).replace('(', '').replace(')', '').replace(',', '').replace("'", '').split()
-                await message.answer(f'Фраза уже была добавлена {data_user[0]} юзером {data_user[1]}')
+                data_user = cursor.fetchall()
+                await message.answer(f'Фраза уже была добавлена {data_user[0][0]} юзером {data_user[0][1]}')
 
     except Exception as ex:
         print(f'[INFO] - {ex}')

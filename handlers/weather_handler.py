@@ -26,7 +26,6 @@ async def wether1(message: types.Message):
             "Mist": "Туман \U0001F32B"
         }
 
-
         data_weather = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={weather_api}&units=metric').json()
 
         weather_description = data_weather['weather'][0]['main']

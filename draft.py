@@ -1,29 +1,8 @@
-from data.config import data
+from operator import itemgetter
+test = [(1, 495432329, 'Vladislav', 162), (2, 495432322, 'Victor', 17), (2, 495432332, 'Vica', 24)]
 
-from aiogram import types
-from loader import dp
-import psycopg2
-from aiogram.dispatcher import filters
-from datetime import datetime
+sort_test = sorted(test, key=lambda x:x[3], reverse=True)
 
-try:
-    connection = psycopg2.connect(
-        host=data['host'],
-        user=data['user'],
-        database=data['database'],
-        port=data['port'],
-        password=data['password'],
-    )
-    connection.autocommit = True
 
-    with connection.cursor() as cursor:
-        create = """DROP TABLE user_phrases;"""
-        cursor.execute(create)
-        print('Table created')
-
-except Exception as ex:
-    print(f'[INFO] - {ex}')
-finally:
-    if connection:
-        print('Connection close')
-        connection.close()
+for i in range(len(sort_test)):
+    print(f"{i+1} место: {sort_test[i][2]} - {sort_test[i][3]} нецензурных слов")
