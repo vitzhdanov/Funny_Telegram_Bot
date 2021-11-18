@@ -23,8 +23,8 @@ async def phrases(message: types.Message):
         connection.autocommit = True
 
         with connection.cursor() as cursor:
-            command_select = """SELECT user_phrase FROM user_phrases WHERE user_id=%s;"""
-            cursor.execute(command_select, (user_id,))
+            command_select = """SELECT user_phrase FROM user_phrases_%s WHERE user_id=%s;"""
+            cursor.execute(command_select, (int(str(message.chat.id).replace('-','')), user_id,))
             list_phrases = []
             for phrase in cursor.fetchall():
                 list_phrases.append(phrase[0])

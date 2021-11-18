@@ -1,6 +1,6 @@
 import requests
-from bs4 import BeautifulSoup
-import xmltodict, json
+import xmltodict
+import json
 
 
 async def horoscope():
@@ -11,16 +11,15 @@ async def horoscope():
     cooking = requests.get('https://ignio.com/r/export/utf/xml/daily/cook.xml').text
     love = requests.get('https://ignio.com/r/export/utf/xml/daily/lov.xml').text
 
-    with open('general.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/general.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(general), f, ensure_ascii=False, indent=4)
-    with open('erotic.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/erotic.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(erotic), f, ensure_ascii=False, indent=4)
-    with open('business.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/business.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(business), f, ensure_ascii=False, indent=4)
-    with open('health.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/health.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(health), f, ensure_ascii=False, indent=4)
-    with open('cooking.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/cooking.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(cooking), f, ensure_ascii=False, indent=4)
-    with open('love.json', 'w', encoding='utf-8') as f:
+    with open('utils/horoscopes/love.json', 'w', encoding='utf-8') as f:
         json.dump(xmltodict.parse(love), f, ensure_ascii=False, indent=4)
-

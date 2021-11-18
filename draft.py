@@ -1,8 +1,14 @@
-from operator import itemgetter
-test = [(1, 495432329, 'Vladislav', 162), (2, 495432322, 'Victor', 17), (2, 495432332, 'Vica', 24)]
 
-sort_test = sorted(test, key=lambda x:x[3], reverse=True)
-
-
-for i in range(len(sort_test)):
-    print(f"{i+1} место: {sort_test[i][2]} - {sort_test[i][3]} нецензурных слов")
+t = [{'495432329': '495432329: 495432329', 'name': 'Vladislav', 'value': 4}, {'495432329': '495432: 495432329', 'name': 'dwefwe', 'value': 4}, {'712795671': '712795671: 1695879234', 'name': 'Ренат', 'value': 4}]
+u = '495432329: 495432329'
+y = [{'chat_id': '495432329', 'value': 4}, {'chat_id': '495432329', 'value': 4}]
+# for i in t:
+#     for k, v in i.items():
+#         if k == '495432329':
+#             y.append(
+#                 {
+#                     'chat_id': '495432329',
+#                     'value': i['value']
+#                 }
+#             )
+print([i for i in y if i['chat_id']=='495432329'])

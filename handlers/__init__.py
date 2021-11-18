@@ -5,4 +5,7 @@ from . import show_my_phrase_handler
 from . import weather_handler
 from . import search_handler
 from . import help_edit_handler
-from . import count_fword_handler
+from . import horoscope_handler
+from . import rate_handler
+from . import advice_handler
+from . import active_handler

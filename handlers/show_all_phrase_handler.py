@@ -22,7 +22,7 @@ async def phrases(message: types.Message):
         connection.autocommit = True
 
         with connection.cursor() as cursor:
-            cursor.execute("""SELECT user_phrase FROM user_phrases;""")
+            cursor.execute("""SELECT user_phrase FROM user_phrases_%s;""", (int(str(message.chat.id).replace('-','')), ))
             list_phrases = []
             for phrase in cursor.fetchall():
                 list_phrases.append(phrase[0])

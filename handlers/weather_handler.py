@@ -44,11 +44,12 @@ async def wether1(message: types.Message):
         sunrise = datetime.datetime.fromtimestamp(data_weather['sys']['sunrise'])
         sunset = datetime.datetime.fromtimestamp(data_weather['sys']['sunset'])
         await message.answer((f'*** {hbold(city)} - {hbold(date)} ***\n'
-              f'️{hunderline(wd)} - 🌡️ {hbold(temp)}℃\n'
-              f'🌡️{hunderline("Ощущается как")} - {hbold(feels_like)}℃\n'
-              f'🌡️{hunderline("Максимальная температура")} - {hbold(temp_max)}℃\n'
-              f'🌡️{hunderline("Минимальная температура")} - {hbold(temp_min)}℃\n'
+              f'️{hunderline(wd)}\n'
+              f'🌡️{hunderline("Температура")} {hbold(temp)}℃\n'
+              f'🌡️{hunderline("Ощущается как")}  {hbold(feels_like)}℃\n'
+              f'🌡️{hunderline("Максимальная температура")}  {hbold(temp_max)}℃\n'
+              f'🌡️{hunderline("Минимальная температура")}  {hbold(temp_min)}℃\n'
               f'💧{hunderline("Влажность")} - {hbold(humidity)}%\n'
-              f'  {hunderline("Рассвет")} - {hbold(sunrise.strftime("%H:%M"))}\n'
-              f'  {hunderline("Закат")} - {hbold(sunset.strftime("%H:%M"))}'))
+              f'🌅{hunderline("Рассвет")} - {hbold(sunrise.strftime("%H:%M"))}\n'
+              f'🌇{hunderline("Закат")} - {hbold(sunset.strftime("%H:%M"))}'))
     await weather()

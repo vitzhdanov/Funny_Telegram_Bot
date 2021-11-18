@@ -1,2 +1,2 @@
-from . import default
-from . import inline
+from . import horoscope_kb
+from . import callback_data
