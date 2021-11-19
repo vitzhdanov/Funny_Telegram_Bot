@@ -8,7 +8,7 @@ lst_user = []
 
 @dp.message_handler(commands='lucky')
 async def luck(message: types.Message):
-    await message.delete()
+
     mes = await dp.bot.send_dice(chat_id=message.chat.id)
     chat_id = str(message.chat.id).replace('-', '')
     user_id = str(message.from_user.id).replace('-', '')
@@ -40,12 +40,12 @@ async def luck(message: types.Message):
             winner = [i for i in users_in_chat if i['value'] == max(i['value'] for i in users_in_chat)]
 
             if len(winner) == 1:
-                time.sleep(2)
-                await message.answer(f"Winner - {winner[0]['name']}")
+                time.sleep(3)
+                await message.answer(f"Удача на стороне - {winner[0]['name']}")
                 lst_user.remove([i for i in lst_user if chat_id in i.keys()][0])
                     # print(lst_user)
             else:
-                time.sleep(2)
+                time.sleep(3)
                 await message.answer(f"Победила дружба{' и '.join([i['name'] for i in winner])}")
                 lst_user.remove([i for i in lst_user if chat_id in i.keys()][0])
         #         print(lst_user)
