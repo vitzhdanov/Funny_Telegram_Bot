@@ -1,5 +1,4 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from .callback_data import type_horo, zodiac
 
 
 help_kb = InlineKeyboardMarkup(row_width=1, inline_keyboard=[
