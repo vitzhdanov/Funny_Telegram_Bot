@@ -1,12 +1,7 @@
-from environs import Env
 
-# Теперь используем вместо библиотеки python-dotenv библиотеку environs
-env = Env()
-env.read_env()
 
 BOT_TOKEN = '1945506016:AAH9INMBm6KKW90-5lfiaOxz7Rvl-8HCoXU'  # Забираем значение типа str
 ADMINS = [495432329]  # Тут у нас будет список из админов
-IP = env.str("ip")  # Тоже str, но для айпи адреса хоста
 
 data = {
     'host': 'ec2-3-248-103-75.eu-west-1.compute.amazonaws.com',
