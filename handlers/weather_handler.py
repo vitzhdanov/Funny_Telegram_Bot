@@ -14,7 +14,7 @@ weather_api = '0d4982c5dacd84aae707350da54a6043'
 
 @dp.message_handler(commands='weather')
 async def wether1(message: types.Message):
-    async def weather(city = 'Краснодар', weather_api = weather_api):
+    async def weather(city='Краснодар', weather_api=weather_api):
 
         code_to_smile = {
             "Clear": "Ясно \U00002600",
