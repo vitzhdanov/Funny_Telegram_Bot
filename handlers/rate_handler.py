@@ -10,7 +10,7 @@ from datetime import datetime
 
 @dp.message_handler(commands='rate')
 async def rates(message:types.Message):
-        date = datetime.now().strftime('%d.%m.%Y')
+    date = datetime.now().strftime('%d.%m.%Y')
     choose = hunderline(f'💱 Курс валют на {date} 💹').center(22)
     await message.answer(text=choose, reply_markup=key)
     await bot.delete_message(message.chat.id, message.message_id)
