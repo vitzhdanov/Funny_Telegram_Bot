@@ -46,7 +46,7 @@ async def luck(message: types.Message):
                     # print(lst_user)
             else:
                 time.sleep(3)
-                await message.answer(f"Победила дружба{' и '.join([i['name'] for i in winner])}")
+                await message.answer(f"Победила дружба {' и '.join([i['name'] for i in winner])}")
                 lst_user.remove([i for i in lst_user if chat_id in i.keys()][0])
         #         print(lst_user)
         # else:

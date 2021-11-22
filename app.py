@@ -11,6 +11,7 @@ from utils.horoscope import horoscope
 from utils.phrase_of_the_day import phrase_day
 from handlers.active_handler import list_chat
 from utils.mn_wd_fr import day_pic
+from utils.weather import weather
 
 
 async def phrase_of_the_day():
@@ -24,11 +25,12 @@ async def day_picture():
 
 
 async def scheduler():
-    aioschedule.every().day.at("00:01").do(horoscope)
-    aioschedule.every().day.at("08:33").do(phrase_of_the_day)
-    aioschedule.every().monday.at("07:30").do(day_picture)
-    aioschedule.every().wednesday.at("07:30").do(day_picture)
-    aioschedule.every().friday.at("07:30").do(day_picture)
+    aioschedule.every().day.at("21:01").do(weather)
+    aioschedule.every().day.at("21:01").do(horoscope)
+    aioschedule.every().day.at("05:00").do(phrase_of_the_day)
+    aioschedule.every().monday.at("05:02").do(day_picture)
+    aioschedule.every().wednesday.at("05:02").do(day_picture)
+    aioschedule.every().friday.at("05:02").do(day_picture)
 
     while True:
         await aioschedule.run_pending()
@@ -42,9 +44,14 @@ async def on_startup(dispatcher):
     # Уведомляет про запуск
     await on_startup_notify(dispatcher)
 
+    await weather()
+
+    await horoscope()
+
     asyncio.create_task(scheduler())
 
 
 if __name__ == '__main__':
+    weather()
     executor.start_polling(dp, on_startup=on_startup)
 

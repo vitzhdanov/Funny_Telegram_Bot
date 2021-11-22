@@ -1,18 +1,16 @@
 import datetime
 
 import requests
-from aiogram import types
 from aiogram.utils.markdown import hunderline, hbold
-from loader import dp
 
-r = []
+forecast_weather = []
+
 date = datetime.datetime.now().strftime('%d.%m.%Y')
-
 
 weather_api = '0d4982c5dacd84aae707350da54a6043'
 
 
-def weather(city='Краснодар', weather_api=weather_api):
+async def weather(city='Краснодар', weather_api=weather_api):
     code_to_smile = {
         "Clear": "\U00002600 Ясно",
         "Clouds": "\U00002601 Облачно",
@@ -50,7 +48,4 @@ def weather(city='Краснодар', weather_api=weather_api):
                           f'💧{hunderline("Влажность")} - {hbold(humidity)}%\n'
                           f'🌅{hunderline("Рассвет")} - {hbold(sunrise.strftime("%H:%M"))}\n'
                           f'🌇{hunderline("Закат")} - {hbold(sunset.strftime("%H:%M"))}')
-    r.append(forecast)
-weather()
-
-print(r[0])
+    forecast_weather.append(forecast)
