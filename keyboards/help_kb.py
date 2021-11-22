@@ -11,7 +11,4 @@ help_kb = InlineKeyboardMarkup(row_width=1, inline_keyboard=[
     [
         InlineKeyboardButton(text='Вывести все фразы', switch_inline_query_current_chat='Бот покажи фразы'),
     ],
-    [
-        InlineKeyboardButton(text='Вывести мои фразы', switch_inline_query_current_chat='Бот покажи мои фразы'),
-    ]
 ])
