@@ -10,6 +10,7 @@ import codecs
 type_h = []
 
 
+# Выводит клавиатуру с типо гороскопа
 @dp.message_handler(commands='horoscope')
 async def type_horoscope(message: types.Message):
     choose = hunderline('Чтобы ты хотел узнать?😈').center(22)
@@ -17,6 +18,7 @@ async def type_horoscope(message: types.Message):
     await dp.bot.delete_message(message.chat.id, message.message_id)
 
 
+# Отлавливает тип гороскопа и вызывает клавиатуру с выбором знака зодиака
 @dp.callback_query_handler(type_horo.filter(type=['general', 'business', 'erotic', 'health', 'cooking', 'love']))
 async def general(call: CallbackQuery):
     choose = hunderline('♑️ Выбери знак ♈️').center(22)
@@ -27,6 +29,7 @@ async def general(call: CallbackQuery):
     await call.message.edit_reply_markup()
 
 
+# Отображает гороскоп
 @dp.callback_query_handler(zodiac.filter(zodiac=['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']))
 async def display(call: CallbackQuery):
     global type_h

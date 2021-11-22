@@ -7,6 +7,7 @@ count = []
 list_chat = []
 
 
+# Проверяет активность в чате
 @dp.message_handler()
 async def check_active(message: types.Message):
     if message.chat.id not in list_chat:
@@ -20,7 +21,6 @@ async def check_active(message: types.Message):
     else:
         [chat for chat in count if str(message.chat.id) in str(chat)][0][message.chat.id] += 1
 
-    print(count)
 
 
 async def send_pic():
@@ -34,11 +34,9 @@ async def send_pic():
             for chat in count:
                 for k, v in chat.items():
                     if v == 0:
-                        # await dp.bot.send_message(chat_id=k, text='swswsw')
                         await dp.bot.send_video(chat_id=k, video=choice(gifs))
                     else:
                         [chat for chat in count if str(k) in str(chat)][0][k] = 0
     else:
         pass
 
-    print(count)

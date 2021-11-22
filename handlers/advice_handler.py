@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from loader import dp
 
 
+# Отправляет запрос на вебсирвис по генерации случайных советов
 @dp.message_handler(commands='advice')
 async def advice(message: types.Message):
     await message.delete()

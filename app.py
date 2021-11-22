@@ -2,8 +2,8 @@ import asyncio
 
 from aiogram import executor
 import aioschedule
-
 from loader import dp
+
 from utils.notify_admins import on_startup_notify
 from utils.set_bot_commands import set_default_commands
 from utils.horoscope import horoscope
@@ -14,11 +14,13 @@ from utils.mn_wd_fr import day_pic
 from utils.weather import weather
 
 
+# Если чат активен отправляет фразу дня
 async def phrase_of_the_day():
     for chat in list_chat:
         await dp.bot.send_message(text=phrase_day(), chat_id=chat)
 
 
+# Если чат активен отправляет картинку
 async def day_picture():
     for chat in list_chat:
         await dp.bot.send_photo(photo=day_pic(), chat_id=chat)
@@ -44,8 +46,10 @@ async def on_startup(dispatcher):
     # Уведомляет про запуск
     await on_startup_notify(dispatcher)
 
+    # При запуске отправляет запрос на прогноз погоды
     await weather()
 
+    # При запуске отправляет запрос на гороскоп
     await horoscope()
 
     asyncio.create_task(scheduler())

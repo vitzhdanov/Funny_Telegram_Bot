@@ -8,6 +8,7 @@ from aiogram.types import CallbackQuery
 from datetime import datetime
 
 
+# Курс валют
 @dp.message_handler(commands='rate')
 async def rates(message:types.Message):
     date = datetime.now().strftime('%d.%m.%Y')
