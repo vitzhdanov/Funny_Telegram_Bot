@@ -9,7 +9,7 @@ from datetime import datetime
 SAVE_WORD = ['Бот', 'сохрани']
 
 
-# Сохраняет текст в БД
+# Сохраняет текст в БД, для каждого чата создаётся своя таблица по номер ID чата
 @dp.message_handler(filters.Text(contains=SAVE_WORD))
 async def phrases(message: types.Message):
     user_phrase = message.text.replace('Бот', '').replace('сохрани', '').replace('@zed_is_dead_bot ', '')

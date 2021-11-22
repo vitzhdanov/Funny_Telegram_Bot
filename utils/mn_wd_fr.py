@@ -2,6 +2,7 @@ import datetime
 from random import choice
 
 
+# Если пн,ср или пт возвращает ссылку
 def day_pic():
     monday_pic = [
         'https://lh3.googleusercontent.com/proxy/6tLX5cGBEg4_CeLtmK82o2SpD_ZnsyS2w2oSRXvWFWKtFOJGhxesdGtR7-UQ_EJ2mATdNOPtG6973uUNwSIz43xibKM',

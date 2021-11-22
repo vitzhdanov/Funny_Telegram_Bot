@@ -27,9 +27,13 @@ async def day_picture():
 
 
 async def scheduler():
-    aioschedule.every().day.at("21:01").do(weather)
-    aioschedule.every().day.at("21:01").do(horoscope)
+    # Запрос на погоду в указанное время
+    aioschedule.every().day.at("21:20").do(weather)
+    # Запрос на гороскоп в указанное время
+    aioschedule.every().day.at("21:20").do(horoscope)
+    # Каждый день в указанное время выводит фразу дня
     aioschedule.every().day.at("05:02").do(phrase_of_the_day)
+    # Каждый понедельник, среду, пятницу выводит картинку
     aioschedule.every().monday.at("05:00").do(day_picture)
     aioschedule.every().wednesday.at("05:00").do(day_picture)
     aioschedule.every().friday.at("05:00").do(day_picture)
@@ -56,6 +60,5 @@ async def on_startup(dispatcher):
 
 
 if __name__ == '__main__':
-    weather()
     executor.start_polling(dp, on_startup=on_startup)
 

@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from .callback_data import type_horo, zodiac
 
-
+# Клавиатура для гороскопа
 kb_horoscope = InlineKeyboardMarkup(row_width=2, inline_keyboard=[
     [
         InlineKeyboardButton(text='Общий ✨', callback_data=type_horo.new(type='general')),

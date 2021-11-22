@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
+# Клавиатура для хендлера помощи
 help_kb = InlineKeyboardMarkup(row_width=1, inline_keyboard=[
     [
         InlineKeyboardButton(text='Поиск Google', switch_inline_query_current_chat='Бот поиск '),

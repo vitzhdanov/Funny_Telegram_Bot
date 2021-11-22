@@ -3,6 +3,7 @@ import xmltodict
 import json
 
 
+# Каждый день запрашивает гороскоп и хранит его в json
 async def horoscope():
     general = requests.get('https://ignio.com/r/export/utf/xml/daily/com.xml').text
     erotic = requests.get('https://ignio.com/r/export/utf/xml/daily/ero.xml').text

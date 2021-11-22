@@ -8,6 +8,7 @@ from aiogram.dispatcher import filters
 SAVE_WORD = ['Бот', 'покажи', 'фраз']
 
 
+# Вывести сохранённые фразы
 @dp.message_handler(filters.Text(contains=SAVE_WORD))
 async def phrases(message: types.Message):
 

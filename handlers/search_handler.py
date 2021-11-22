@@ -7,6 +7,7 @@ from aiogram.utils.callback_data import CallbackData
 SAVE_WORD = ['Бот', 'поиск']
 
 
+# Поиск в гугл
 @dp.message_handler(filters.Text(contains=SAVE_WORD))
 async def test(message: types.Message):
     text = message.text.replace('Бот поиск ', '').replace('@zed_is_dead_bot', '').replace(' ', '+')

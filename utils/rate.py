@@ -1,4 +1,3 @@
-from aiogram.utils.markdown import hbold
 from bs4 import BeautifulSoup as bs
 
 import requests

@@ -3,6 +3,7 @@ from loader import dp
 from utils.weather import forecast_weather
 
 
+# Погода
 @dp.message_handler(commands='weather')
 async def weather_handler(message: types.Message):
     await message.answer(forecast_weather[0])
