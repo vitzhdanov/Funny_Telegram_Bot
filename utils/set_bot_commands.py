@@ -12,7 +12,7 @@ async def set_default_commands(dp):
             types.BotCommand('rate', f'Курс валют на {date} 💱'),
             types.BotCommand("lucky", "Проверь удачу 🍀"),
             types.BotCommand("advice", "Совет от Бота 🤖"),
-            types.BotCommand("yesorno", "Бот решит за тебя ✅ или ❌"),
+            types.BotCommand("yesno", "Бот решит за тебя: ✅ или ❌"),
             types.BotCommand("help", "Узнай скрытые возможности 📔"),
         ]
     )

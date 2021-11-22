@@ -41,11 +41,11 @@ async def weather(city='Краснодар', weather_api=weather_api):
     sunset = datetime.datetime.fromtimestamp(data_weather['sys']['sunset'])
     forecast = (f'*** {hbold(city)} - {hbold(date)} ***\n'
                           f'️{hunderline(wd)}\n'
-                          f'🌡️{hunderline("Температура")} {hbold(temp)}℃\n'
-                          f'🌡️{hunderline("Ощущается как")}  {hbold(feels_like)}℃\n'
-                          f'🌡️{hunderline("Максимальная температура")}  {hbold(temp_max)}℃\n'
-                          f'🌡️{hunderline("Минимальная температура")}  {hbold(temp_min)}℃\n'
-                          f'💧{hunderline("Влажность")} - {hbold(humidity)}%\n'
-                          f'🌅{hunderline("Рассвет")} - {hbold(sunrise.strftime("%H:%M"))}\n'
-                          f'🌇{hunderline("Закат")} - {hbold(sunset.strftime("%H:%M"))}')
+                          f'🌡️ {hunderline("Температура")} {hbold(temp)}℃\n'
+                          f'🌡️ {hunderline("Ощущается как")}  {hbold(feels_like)}℃\n'
+                          f'🌡️ {hunderline("Максимальная температура")}  {hbold(temp_max)}℃\n'
+                          f'🌡️ {hunderline("Минимальная температура")}  {hbold(temp_min)}℃\n'
+                          f'💧 {hunderline("Влажность")} - {hbold(humidity)}%\n'
+                          f'🌅 {hunderline("Рассвет")} - {hbold(sunrise.strftime("%H:%M"))}\n'
+                          f'🌇 {hunderline("Закат")} - {hbold(sunset.strftime("%H:%M"))}')
     forecast_weather.append(forecast)

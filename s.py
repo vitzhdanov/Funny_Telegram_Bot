@@ -7,5 +7,5 @@ from loader import dp
 
 
 
-response = requests.get('https://yesno.wtf/api').json()
-print(response['image'])
+response = requests.get('https://yesno.wtf/api').json()['image']
+print(response)
