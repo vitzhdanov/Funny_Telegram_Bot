@@ -27,10 +27,10 @@ async def day_picture():
 async def scheduler():
     aioschedule.every().day.at("21:01").do(weather)
     aioschedule.every().day.at("21:01").do(horoscope)
-    aioschedule.every().day.at("05:00").do(phrase_of_the_day)
-    aioschedule.every().monday.at("05:02").do(day_picture)
-    aioschedule.every().wednesday.at("05:02").do(day_picture)
-    aioschedule.every().friday.at("05:02").do(day_picture)
+    aioschedule.every().day.at("05:02").do(phrase_of_the_day)
+    aioschedule.every().monday.at("05:00").do(day_picture)
+    aioschedule.every().wednesday.at("05:00").do(day_picture)
+    aioschedule.every().friday.at("05:00").do(day_picture)
 
     while True:
         await aioschedule.run_pending()
