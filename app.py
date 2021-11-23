@@ -28,7 +28,6 @@ async def day_picture():
 
 async def scheduler():
     # Запрос на погоду в указанное время
-    aioschedule.every().day.at("03:20").do(weather)
     # Запрос на гороскоп в указанное время
     aioschedule.every().day.at("21:20").do(horoscope)
     # Каждый день в указанное время выводит фразу дня
@@ -51,7 +50,6 @@ async def on_startup(dispatcher):
     await on_startup_notify(dispatcher)
 
     # При запуске отправляет запрос на прогноз погоды
-    await weather()
 
     # При запуске отправляет запрос на гороскоп
     await horoscope()
