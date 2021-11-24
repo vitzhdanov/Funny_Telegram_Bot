@@ -3,7 +3,6 @@ from loader import dp
 from random import choice
 from datetime import datetime
 
-count = []
 list_chat = []
 
 

@@ -53,8 +53,6 @@ async def on_startup(dispatcher):
     # Уведомляет про запуск
     await on_startup_notify(dispatcher)
 
-    # При запуске отправляет запрос на прогноз погоды
-
     # При запуске отправляет запрос на гороскоп
     await horoscope()
 
