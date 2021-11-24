@@ -11,7 +11,7 @@ SHORTNER_WORD = ['Бот', 'обрежь', 'ссылку']
 # укорачивает ссылку
 @dp.message_handler(filters.Text(contains=SHORTNER_WORD))
 async def test(message: types.Message):
-    user_link = message.text.replace('Бот обрежь ссылку ', '').replace('@zed_is_dead_bot', '').split()
+    user_link = message.text.replace('Бот обрежь ссылку ', '').replace('@zed_is_dead_bot', '').strip()
     resp = requests.post('https://www.iclc.info/shortner/', {'long_url': str(user_link)}).json()
     sym = str(resp['short_sym'])
     em = resp['short_em']
