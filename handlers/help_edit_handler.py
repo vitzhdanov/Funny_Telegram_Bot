@@ -9,6 +9,7 @@ from keyboards.help_kb import help_kb
 async def help_func(message: types.Message):
     text = (f"{hbold('ИНСТРУКЦИЯ:')}\n"
             f"{hunderline('Бот поиск ')}{hcode('*запрос*')} - {hitalic('поиск в гугле.')}\n"
+            f"{hunderline('Бот обрежь ссылку ')}{hcode('*URL*')} - {hitalic('укорачивает ссылку.')}\n"
             f"{hunderline('Бот сохрани ')}{hcode('*слово/фраза*')} - {hitalic('сохраняет в БД.')}\n"
             f"{hunderline('Бот покажи фразы')} - {hitalic('выводит все сохранённые фразы.')}\n"
             )
