@@ -15,4 +15,13 @@ async def test(message: types.Message):
     resp = requests.post('https://www.iclc.info/shortner/', {'long_url': str(user_link)}).json()
     sym = str(resp['short_sym'])
     em = resp['short_em']
-    await message.answer(f"{user_link}\n{sym}\n\n{em}")
+    shortner_key = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text=sym, switch_inline_query_current_chat=sym, url=sym)
+        ],
+        [
+            InlineKeyboardButton(text=em, switch_inline_query_current_chat=em, url=em)
+        ]
+    ])
+    # await message.answer(f"{user_link}\n{sym}\n\n{em}")
+    await message.answer('r', reply_markup=shortner_key)
