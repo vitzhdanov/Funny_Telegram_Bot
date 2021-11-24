@@ -17,11 +17,11 @@ async def test(message: types.Message):
     em = resp['short_em']
     shortner_key = InlineKeyboardMarkup(inline_keyboard=[
         [
-            InlineKeyboardButton(text=sym, switch_inline_query_current_chat=sym)
+            InlineKeyboardButton(text=sym, switch_inline_query_current_chat=sym.replace('@zed_is_dead_bot', ''))
         ],
         [
             InlineKeyboardButton(text=em, switch_inline_query_current_chat=em)
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
-    await message.answer('r', reply_markup=shortner_key)
+    await message.answer('💫', reply_markup=shortner_key)
