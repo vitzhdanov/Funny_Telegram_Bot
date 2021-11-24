@@ -11,7 +11,6 @@ from utils.horoscope import horoscope
 from utils.phrase_of_the_day import phrase_day
 from handlers.active_handler import list_chat
 from utils.mn_wd_fr import day_pic
-from utils.weather import weather
 
 
 # Если чат активен отправляет фразу дня
@@ -31,9 +30,8 @@ async def clear_list_chat():
 
 
 async def scheduler():
-    # Запрос на погоду в указанное время
-    aioschedule.every().minute.do(clear_list_chat)
-    # aioschedule.every().wednesday.at("20:00").do()
+    # Очищает списко активных чатов
+    aioschedule.every().wednesday.at("20:00").do(clear_list_chat)
     # Запрос на гороскоп в указанное время
     aioschedule.every().day.at("21:20").do(horoscope)
     # Каждый день в указанное время выводит фразу дня
