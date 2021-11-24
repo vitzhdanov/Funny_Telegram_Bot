@@ -12,8 +12,7 @@ SHORTNER_WORD = ['Бот', 'обрежь', 'ссылку']
 @dp.message_handler(filters.Text(contains=SHORTNER_WORD))
 async def test(message: types.Message):
     user_link = message.text.replace('Бот обрежь ссылку ', '').replace('@zed_is_dead_bot', '')
-    await dp.bot.send_message(chat=495432329, text = user_link)
     resp = requests.post('https://www.iclc.info/shortner/', {'long_url': str(user_link)}).json()
     sym = resp['short_sym']
     em = resp['short_em']
-    await message.answer(f"{sym}\n\n{em}")
+    await message.answer(f"{user_link}\n{sym}\n\n{em}")
