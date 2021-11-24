@@ -26,8 +26,14 @@ async def day_picture():
         await dp.bot.send_photo(photo=day_pic(), chat_id=chat)
 
 
+async def clear_list_chat():
+    list_chat.clear()
+
+
 async def scheduler():
     # Запрос на погоду в указанное время
+    aioschedule.every().minute.do(clear_list_chat)
+    # aioschedule.every().wednesday.at("20:00").do()
     # Запрос на гороскоп в указанное время
     aioschedule.every().day.at("21:20").do(horoscope)
     # Каждый день в указанное время выводит фразу дня

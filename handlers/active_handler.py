@@ -12,7 +12,7 @@ list_chat = []
 async def check_active(message: types.Message):
     if message.chat.id not in list_chat:
         list_chat.append(message.chat.id)
-    await dp.bot.send_message(chat_id=495432329, text=list_chat)
+
 
 
 async def send_pic():
