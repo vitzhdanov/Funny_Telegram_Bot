@@ -12,15 +12,7 @@ list_chat = []
 async def check_active(message: types.Message):
     if message.chat.id not in list_chat:
         list_chat.append(message.chat.id)
-    if str(message.chat.id) not in str(count):
-        count.append(
-            {
-                message.chat.id: 1
-            }
-        )
-    else:
-        [chat for chat in count if str(message.chat.id) in str(chat)][0][message.chat.id] += 1
-
+    print(list_chat)
 
 
 async def send_pic():
