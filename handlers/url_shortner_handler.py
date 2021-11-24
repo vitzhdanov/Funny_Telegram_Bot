@@ -13,6 +13,6 @@ SHORTNER_WORD = ['Бот', 'обрежь', 'ссылку']
 async def test(message: types.Message):
     user_link = message.text.replace('Бот обрежь ссылку ', '').replace('@zed_is_dead_bot', '')
     resp = requests.post('https://www.iclc.info/shortner/', {'long_url': str(user_link)}).json()
-    sym = resp['short_sym']
+    sym = str(resp['short_sym'])
     em = resp['short_em']
     await message.answer(f"{user_link}\n{sym}\n\n{em}")
