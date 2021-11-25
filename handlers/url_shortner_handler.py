@@ -18,10 +18,10 @@ async def test(message: types.Message):
     em = resp['short_em']
     shortner_key = InlineKeyboardMarkup(inline_keyboard=[
         [
-            InlineKeyboardButton(text=sym, switch_inline_query_current_chat=sym, switch_inline_query='')
+            InlineKeyboardButton(text=sym)
         ],
         [
-            InlineKeyboardButton(text=em, switch_inline_query_current_chat=em, url=sym)
+            InlineKeyboardButton(text=em)
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
