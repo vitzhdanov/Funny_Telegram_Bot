@@ -25,4 +25,4 @@ async def test(message: types.Message):
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
-    await message.answer(text, reply_markup=shortner_key)
+    await message.answer(text)
