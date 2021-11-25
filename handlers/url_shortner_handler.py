@@ -1,3 +1,4 @@
+import aiogram.types
 from aiogram import types
 from aiogram.dispatcher import filters
 from loader import dp
@@ -24,4 +25,4 @@ async def test(message: types.Message):
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
-    await message.answer('💫', reply_markup=shortner_key)
+    await message.answer('💫', reply_markup=shortner_key, parse_mode=aiogram.types.ParseMode.MARKDOWN)
