@@ -3,7 +3,7 @@ from aiogram import types
 from aiogram.dispatcher import filters
 from loader import dp
 import requests
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils.callback_data import CallbackData
 
 SHORTNER_WORD = ['Бот', 'обрежь', 'ссылку']
@@ -16,12 +16,12 @@ async def test(message: types.Message):
     resp = requests.post('https://www.iclc.info/shortner/', {'long_url': str(user_link)}).json()
     sym = str(resp['short_sym'])
     em = resp['short_em']
-    shortner_key = InlineKeyboardMarkup(inline_keyboard=[
+    shortner_key = ReplyKeyboardMarkup(keyboard=[
         [
-            InlineKeyboardButton(text=sym)
+            KeyboardButton(text=sym)
         ],
         [
-            InlineKeyboardButton(text=em)
+            KeyboardButton(text=em)
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
