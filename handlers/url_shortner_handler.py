@@ -21,8 +21,8 @@ async def test(message: types.Message):
             InlineKeyboardButton(text=sym, switch_inline_query_current_chat=sym, url=sym)
         ],
         [
-            InlineKeyboardButton(text=em, switch_inline_query_current_chat=em, url=sym)
+            InlineKeyboardButton(text=em)
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
-    await message.answer('💫', reply_markup=shortner_key, parse_mode=aiogram.types.ParseMode.MARKDOWN)
+    await message.answer(sym, reply_markup=shortner_key, parse_mode=aiogram.types.ParseMode.MARKDOWN)
