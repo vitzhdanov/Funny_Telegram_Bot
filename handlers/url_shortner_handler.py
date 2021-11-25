@@ -25,4 +25,4 @@ async def test(message: types.Message):
         ]
     ])
     # await message.answer(f"{user_link}\n{sym}\n\n{em}")
-    await message.answer(sym, reply_markup=shortner_key, parse_mode=aiogram.types.ParseMode.MARKDOWN)
+    await message.answer(str(sym), parse_mode=aiogram.types.ParseMode.MARKDOWN)
