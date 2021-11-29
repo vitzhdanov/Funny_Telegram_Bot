@@ -16,3 +16,23 @@
 
 Для работы заполнить файлик 'config', вставить свои данные.
 Для полноценной работы лучше сделать бота админом, он удаляет некоторые команды типа '/weather' чтобы не засорять чат.
+
+<b>Возможности</b>
+
+![возможности](https://user-images.githubusercontent.com/80068247/143864082-c1ed8e45-3ffd-4653-8de1-3f9cfbac1386.jpg)
+
+
+<b>Погода, курс валют</b>
+
+![Погода_курс](https://user-images.githubusercontent.com/80068247/143864765-2c974411-35ac-460d-8685-af0f82dc7e62.jpg)
+
+
+<b>Дополнительные возможности</b>
+
+![Screenshot_7](https://user-images.githubusercontent.com/80068247/143865235-3440ab8c-9b87-487c-99b5-2530927e4dd8.jpg)
+
+
+<b>Укорачиватель URL</b>
+
+![Screenshot_8](https://user-images.githubusercontent.com/80068247/143865282-77a65bc2-b798-4e73-9899-e312028983ea.jpg)
+
